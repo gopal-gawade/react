@@ -21,6 +21,7 @@ const HookuseTransition = () => {
 
     return (
         <div>
+            <h3>useTransition</h3>
             <input
                 type='text'
                 value={search}

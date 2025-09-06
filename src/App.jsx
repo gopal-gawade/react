@@ -3,7 +3,7 @@ import ClassCmp from './basic/ClassCmp'
 import FunctionalCmp from './basic/FunctionalCmp'
 import FunctionalState from './basic/FunctionalState'
 import ClassState from './basic/ClassState'
-import { createContext, useRef, useState } from 'react'
+import { createContext, Suspense, useRef, useState } from 'react'
 import ContextCmp from './basic/ContextCmp'
 import FunctionalProps from './basic/FunctionalProps'
 import ClassProps from './basic/ClassProps';
@@ -26,6 +26,12 @@ import HookuseMemo from './hooks/HookuseMemo'
 import HookuseDeferredValueOne from './hooks/18/HookuseDeferredValueOne'
 import HookuseTransition from './hooks/18/HookuseTransition'
 import HookuseId from './hooks/18/HookuseId'
+import HookuseActionState from './hooks/19/HookuseActionState'
+import HookuseFormStatus from './hooks/19/HookuseFormStatus'
+import HookuseOptimistic from './hooks/19/HookuseOptimistic'
+import Hookuse from './hooks/19/Hookuse'
+import Error from './components/Error'
+import { ErrorBoundary } from 'react-error-boundary'
 
 export const UserContext = createContext();
 
@@ -90,6 +96,14 @@ function App() {
       <HookuseDeferredValueOne />
       <HookuseTransition />
       <HookuseId />
+      <HookuseActionState />
+      <HookuseFormStatus />
+      <HookuseOptimistic />
+      <ErrorBoundary FallbackComponent={Error}>
+        <Suspense fallback={<p>Loading...</p>}>
+          <Hookuse />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   )
 }
