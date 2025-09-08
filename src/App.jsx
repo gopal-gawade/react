@@ -3,7 +3,7 @@ import ClassCmp from './basic/ClassCmp'
 import FunctionalCmp from './basic/FunctionalCmp'
 import FunctionalState from './basic/FunctionalState'
 import ClassState from './basic/ClassState'
-import { createContext, Suspense, useRef, useState } from 'react'
+import { createContext, lazy, Suspense, useRef, useState } from 'react'
 import ContextCmp from './basic/ContextCmp'
 import FunctionalProps from './basic/FunctionalProps'
 import ClassProps from './basic/ClassProps';
@@ -31,9 +31,17 @@ import HookuseFormStatus from './hooks/19/HookuseFormStatus'
 import HookuseOptimistic from './hooks/19/HookuseOptimistic'
 import Hookuse from './hooks/19/Hookuse'
 import Error from './components/Error'
+import HigherOrderComponentOne from './basic/HigherOrderCmpOne'
+import HigherOrderComponentTwo from './basic/HigherOrderCmpTwo'
+import RouterError from './components/RouteError'
+import CmpA from './rounting/CmpA'
+import CmpB from './rounting/CmpB'
 import { ErrorBoundary } from 'react-error-boundary'
+import { createBrowserRouter, Link, Outlet } from 'react-router-dom'
 
 export const UserContext = createContext();
+const LazyCmp = lazy(() => import("./basic/LazyComponent"));
+const HigherOrder = HigherOrderComponentOne(HigherOrderComponentTwo)
 
 function App() {
   const [message, setMessage] = useState("");
@@ -104,8 +112,42 @@ function App() {
           <Hookuse />
         </Suspense>
       </ErrorBoundary>
+
+      {/*Optimization*/}
+      <Suspense fallback={<p>Loading...</p>}>
+        <LazyCmp />
+      </Suspense>
+      <HigherOrder message={message} />
+
+      {/*Routing*/}
+      <Outlet />
+      <ul>
+        <li>
+          <Link to={'/cmpA'}>Component One</Link>
+        </li>
+
+        <li>
+          <Link to={'/cmpB'}>Component Two</Link>
+        </li>
+      </ul>
     </div>
   )
 }
 
-export default App
+export const mainRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <RouterError />,
+    children: [
+      {
+        path: '/cmpA',
+        element: <CmpA />
+      },
+      {
+        path: '/cmpB',
+        element: <CmpB />
+      }
+    ]
+  }
+])
