@@ -3,3 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.dropdown {
+  position: relative;
+}
+
+.select {
+  position: absolute;
+}
+
+.select button {
+  width: 100%;
+}

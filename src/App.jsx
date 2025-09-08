@@ -38,6 +38,9 @@ import CmpA from './rounting/CmpA'
 import CmpB from './rounting/CmpB'
 import { ErrorBoundary } from 'react-error-boundary'
 import { createBrowserRouter, Link, Outlet } from 'react-router-dom'
+import Counter from './advance/Counter'
+import ClickOutsideDropdown from './advance/ClickOutsideDropdown'
+import InlineEditableInput from './advance/InlineEditableInput'
 
 export const UserContext = createContext();
 const LazyCmp = lazy(() => import("./basic/LazyComponent"));
@@ -130,6 +133,11 @@ function App() {
           <Link to={'/cmpB'}>Component Two</Link>
         </li>
       </ul>
+
+      {/*Advance*/}
+      <Counter/>
+      <ClickOutsideDropdown/>
+      <InlineEditableInput/>
     </div>
   )
 }
