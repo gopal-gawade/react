@@ -43,6 +43,9 @@ import ClickOutsideDropdown from './advance/ClickOutsideDropdown'
 import InlineEditableInput from './advance/InlineEditableInput'
 import TemperatureConverter from './advance/TemperatureConverter'
 import OtpInput from './advance/OtpInput'
+import ValidateForm from './advance/ValidateForm'
+import FlipCard from './advance/FlipCard'
+import CustomKeyboardTab from './advance/CustomKeyboardTab'
 
 export const UserContext = createContext();
 const LazyCmp = lazy(() => import("./basic/LazyComponent"));
@@ -142,6 +145,9 @@ function App() {
       <InlineEditableInput />
       <TemperatureConverter />
       <OtpInput />
+      <ValidateForm/>
+      <FlipCard/>
+      <CustomKeyboardTab/>
     </div>
   )
 }
