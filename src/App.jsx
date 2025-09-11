@@ -41,6 +41,8 @@ import { createBrowserRouter, Link, Outlet } from 'react-router-dom'
 import Counter from './advance/Counter'
 import ClickOutsideDropdown from './advance/ClickOutsideDropdown'
 import InlineEditableInput from './advance/InlineEditableInput'
+import TemperatureConverter from './advance/TemperatureConverter'
+import OtpInput from './advance/OtpInput'
 
 export const UserContext = createContext();
 const LazyCmp = lazy(() => import("./basic/LazyComponent"));
@@ -135,9 +137,11 @@ function App() {
       </ul>
 
       {/*Advance*/}
-      <Counter/>
-      <ClickOutsideDropdown/>
-      <InlineEditableInput/>
+      <Counter />
+      <ClickOutsideDropdown />
+      <InlineEditableInput />
+      <TemperatureConverter />
+      <OtpInput />
     </div>
   )
 }
