@@ -48,6 +48,12 @@ import FlipCard from './advance/FlipCard'
 import CustomKeyboardTab from './advance/CustomKeyboardTab'
 import FlattenArray from './advance/FlattenArray'
 import KeyboardModal from './advance/KeyboardModal'
+import DeepClone from './advance/DeepClone'
+import ProviderContext from './advance/ProviderContext'
+import ProductList from './advance/ProductList'
+import DragDiv from './advance/DragDiv'
+import StringCompression from './advance/StringCompression'
+import DebounceSearch from './advance/DebounceSearch'
 
 export const UserContext = createContext();
 const LazyCmp = lazy(() => import("./basic/LazyComponent"));
@@ -151,7 +157,14 @@ function App() {
       <FlipCard />
       <CustomKeyboardTab />
       <FlattenArray />
-      <KeyboardModal/>
+      <KeyboardModal />
+      <DeepClone />
+      <ProviderContext>
+        <ProductList />
+      </ProviderContext>
+      <DragDiv />
+      <StringCompression />
+        <DebounceSearch />
     </div>
   )
 }
