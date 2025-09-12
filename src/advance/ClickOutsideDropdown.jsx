@@ -9,7 +9,6 @@ const ClickOutsideDropdown = () => {
             return;
         }
         const handleClickOutside = (e) => {
-            console.log(e.target, ref.current);
             if (ref.current && !ref.current.contains(e.target)) {
                 setOpen(false);
             }

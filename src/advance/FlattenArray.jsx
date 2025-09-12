@@ -77,8 +77,6 @@ const FlattenArray = () => {
         setSelected(e.target.value)
     }
 
-    console.log(selected);
-
     return (
         <div>
             <h3>Flatten Array</h3>

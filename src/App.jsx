@@ -54,6 +54,9 @@ import ProductList from './advance/ProductList'
 import DragDiv from './advance/DragDiv'
 import StringCompression from './advance/StringCompression'
 import DebounceSearch from './advance/DebounceSearch'
+import MultiStepForm from './advance/MultiStepForm'
+import PromiseAll from './advance/PromiseAll'
+import TodoList from './advance/TodoList'
 
 export const UserContext = createContext();
 const LazyCmp = lazy(() => import("./basic/LazyComponent"));
@@ -164,7 +167,10 @@ function App() {
       </ProviderContext>
       <DragDiv />
       <StringCompression />
-        <DebounceSearch />
+      <DebounceSearch />
+      <MultiStepForm/>
+      <PromiseAll/>
+      <TodoList/>
     </div>
   )
 }
