@@ -57,6 +57,8 @@ import DebounceSearch from './advance/DebounceSearch'
 import MultiStepForm from './advance/MultiStepForm'
 import PromiseAll from './advance/PromiseAll'
 import TodoList from './advance/TodoList'
+import PasswordStrength from './advance/PasswordStrength'
+import SearchInNested from './advance/SearchInNested'
 
 export const UserContext = createContext();
 const LazyCmp = lazy(() => import("./basic/LazyComponent"));
@@ -171,6 +173,8 @@ function App() {
       <MultiStepForm/>
       <PromiseAll/>
       <TodoList/>
+      <PasswordStrength/>
+      <SearchInNested/>
     </div>
   )
 }
