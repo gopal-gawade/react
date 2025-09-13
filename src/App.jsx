@@ -54,11 +54,14 @@ import ProductList from './advance/ProductList'
 import DragDiv from './advance/DragDiv'
 import StringCompression from './advance/StringCompression'
 import DebounceSearch from './advance/DebounceSearch'
+import ThrottleSearch from './advance/ThrottleSearch'
 import MultiStepForm from './advance/MultiStepForm'
 import PromiseAll from './advance/PromiseAll'
 import TodoList from './advance/TodoList'
 import PasswordStrength from './advance/PasswordStrength'
 import SearchInNested from './advance/SearchInNested'
+import Pagination from './advance/Pagination'
+import InfiniteScroll from './advance/InfiniteScroll'
 
 export const UserContext = createContext();
 const LazyCmp = lazy(() => import("./basic/LazyComponent"));
@@ -170,11 +173,14 @@ function App() {
       <DragDiv />
       <StringCompression />
       <DebounceSearch />
-      <MultiStepForm/>
-      <PromiseAll/>
-      <TodoList/>
-      <PasswordStrength/>
-      <SearchInNested/>
+      <ThrottleSearch/>
+      <MultiStepForm />
+      <PromiseAll />
+      <TodoList />
+      <PasswordStrength />
+      <SearchInNested />
+      <Pagination/>
+      <InfiniteScroll/>
     </div>
   )
 }

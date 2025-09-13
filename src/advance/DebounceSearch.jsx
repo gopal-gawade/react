@@ -12,7 +12,7 @@ const useDebounceFunc = (val, delay) => {
 
         ref.current = setTimeout(() => {
             setDebounce(val);
-        }, [delay])
+        }, delay)
 
         return () => clearTimeout(ref.current)
     }, [val, delay]);
